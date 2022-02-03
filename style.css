@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Mukta:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: Dongle, sans-serif;
+}
+
+body{
+     background: black;
+}
+
+header{
+
+    margin:10% auto;
+    padding: 0.2%;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 80%;
+}
+
+header > level{
+    font-size: 24px;
+    line-height: 30px;
+}
+
+
+.math-problem {
+    padding-left: 10%;
+    padding-right: 10%;
+    color: white;
+    text-align: left;
+    font-size:40px;
+}
+
+input[type=number], select {
+
+    height: 30px;
+    position: relative ;
+    top:-5px;
+    font-size: 30px;
+    margin: 4px;
+    text-align: center;
+
+
+}
+
+button{
+
+    width: 80px;
+    height: 40px;
+    font-size: 28px;
+}
+
