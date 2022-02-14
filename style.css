@@ -8,7 +8,7 @@
 }
 
 body{
-     background: black;
+     background: #8d6f58 ;
 }
 
 header{
@@ -18,13 +18,29 @@ header{
     color: white;
     text-align: center;
     border: 3px solid white;
-    border-radius: 4px;
+    border-radius: 6px;
     width: 80%;
 }
 
 header > level{
+    position: relative;
+    top: -45px;
     font-size: 24px;
     line-height: 30px;
+}
+header > name{
+
+    font-size: 60px;
+    position: relative;
+    top:-50px;
+}
+
+header > scoreboard{
+    position : relative;
+    top: -50px;
+    right: -38%;
+    font-size: 40px;
+    color:rgba(240, 248, 255, 0.541);
 }
 
 
@@ -45,7 +61,6 @@ input[type=number], select {
     margin: 4px;
     text-align: center;
 
-
 }
 
 button{
@@ -53,5 +68,28 @@ button{
     width: 80px;
     height: 40px;
     font-size: 28px;
+    background-color: white;
+    border-radius: 1px;
 }
 
+button2{
+    width: 300px;
+    height: 40px;
+    font-size: 28px;
+    background-color: white;
+    border-radius: 1px;
+    color: black;
+    border-color: black;
+    border-width: 4px;
+}
+
+@keyframes blink{
+
+    0%{color:red; 
+        opacity:0;
+    }
+    50%{color:red; 
+        opacity:0.5;
+    }
+    100%{color: rgba(240, 248, 255, 0.541);}
+}

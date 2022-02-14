@@ -23,19 +23,22 @@ var mathTotal = 5;
 var mathLevel = 1;
 var mathBound = 11;
 var mathScore = 0;
-var totalCorrect = 0; // counts the number of correct answers
+var streak = 0;
+var totalScore = 0; // counts the number of correct answers
 var progCount = 0; // counts the progress
 var mathAnswer = 2;
 
 //header
+const sBoard = document.getElementById("scoreboard");
 const level_span = document.getElementById("level");
 const topic_div = document.getElementById("topic");
 const mathScore_span = document.getElementById("math-score");
 const totalScore_span = document.getElementById("total-scoring");
 
-var audioFail = new Audio('YameteK.mp3');
+var audioFail = new Audio('fail.mp3');
 var audioSucceed = new Audio('wow.mp3');
-var audioLvlup = new Audio('lvlup.mp3')
+var audioLvlup = new Audio('lvlup.mp3');
+var audioLvldown = new Audio('lvldown.mp3');
 
 // math-problem
 const mathProblem_div = document.getElementById("math-problem");
@@ -46,14 +49,22 @@ const mathExpression_span = document.getElementById("math-expression");
 function setLevel(lvl){
 
     if (lvl == "restart") {
-        lvl = 1}
+        lvl = 1;
+        totalScore = 0;
+        streak = 0;
+        }
 
     else if (lvl == "demote"){
         if (mathLevel > 1){ 
-            lvl = mathLevel -1;}
+            lvl = mathLevel -1;
+            totalScore = Math.max(totalScore -5, 0);
+            sBoard.innerHTML = String(totalScore).padStart(7,'0');}
         
         else {lvl = mathLevel;}
         }
+    
+    else if (lvl =="skip"){
+        lvl +=1;}
 
     level_span.innerHTML = lvl;
 
@@ -68,8 +79,8 @@ function setLevel(lvl){
     else{
         topic_div.innerHTML= "Multiplication and Division";
         mathProblem_div.innerHTML= "Multiply and Divide:";
-        mathTotal = 5;
-        totalScore_span.innerHTML= 5;
+        mathTotal = 5 + lvl;
+        totalScore_span.innerHTML= 5 + lvl;
         mathBound = 11;}
     
     mathLevel = lvl;
@@ -128,6 +139,26 @@ function createQuestion(lvl){
     }
 }
 
+function Score(){
+
+    if (progCount > 1){
+
+        totalScore += streak + 1;
+
+    }
+
+    else{
+
+        totalScore +=1;
+        streak = 0;
+
+    }
+
+    streak+=1;
+    sBoard.innerHTML= String(totalScore).padStart(7,'0');
+
+}
+
 function submitAnswer(){
 
     var ans = document.getElementById("answer").value;
@@ -135,40 +166,72 @@ function submitAnswer(){
     if (ans == mathAnswer){
 
         mathScore += 1;
-        totalCorrect +=1;
         progCount +=1;
+
+        Score();
 
         if (mathScore == mathTotal){
 
             setLevel(mathLevel + 1);
+            audioFail.pause();
             audioLvlup.play();
             progCount = 0;}
 
         else {
+            audioFail.pause();
             audioSucceed.currentTime = 0;
             audioSucceed.play();
             mathScore_span.innerHTML = mathScore;}
-        }
+        
+        
+    }
 
 
     
     else {
 
-        audioFail.currentTime = 0;
-        audioFail.play();
         progCount +=1;
+        streak = 0; // break streak
 
         if (progCount < 5){
             mathTotal += 2;
-            totalScore_span.innerHTML=mathTotal;}
+            totalScore_span.innerHTML=mathTotal;
+            audioSucceed.pause();
+            audioFail.currentTime = 0;
+            audioFail.play();}
         
         else if(mathScore == 0){
-
+            audioFail.pause();
             setLevel("demote");
+            audioLvldown.play();
             progCount = 0;
+            sBoard.style.animation = 'none';
+            sBoard.offsetHeight;
+            sBoard.style.animation=null;
+            sBoard.style.animation= "blink 0.2s linear 4";
 
+        }
+        else{
+            audioSucceed.pause();
+            audioFail.currentTime = 0;
+            audioFail.play();
         }
     }
 
-    createQuestion(mathLevel)
+    createQuestion(mathLevel);
+    document.getElementById("answer").value = "";
+}
+
+
+function keyDown(){
+
+    if (event.keyCode ==13){
+        submitAnswer();
+    }
+}
+
+function skipLvl(){
+
+    setLevel(mathLevel +1);
+    createQuestion(mathLevel);
 }

@@ -12,8 +12,8 @@
 <body>
     
     <header>
-
-        <h1>Math Practice</h1>
+        <scoreboard id = "scoreboard">0000000</scoreboard><br>
+        <name>Math Practice</name><br>
         <level> Level <span id= "level">1</span>
             <div id= "topic" >Addition</div>
             <span id = "math-score">0</span> / <span id = "total-scoring">5</span>
@@ -24,9 +24,11 @@
 
         <div id = "math-problem" class= "questions">Add:</div>
 
-        <span id = "math-expression"> 1 + 1 = </span>  <span > <input type = "number" id= "answer" onfocus="this.value=''"> </span> <br>
+        <span id = "math-expression"> 1 + 1 = </span>  <span > <input type = "number" id= "answer" autocomplete="off" onfocus="this.value=''" onkeydown="keyDown()"> </span> <br>
 
-        <button type="button" id="submitButton" onclick="submitAnswer()">submit</button>
+        <button type="button" id="submitButton"  onclick="submitAnswer()">submit</button>
+        <button type="button" onclick = "createQuestion(mathLevel)">skip</button> <br>
+        <button2 type="button" id="skiplvl" onclick="skipLvl()">skip level</button2>
 
     </div>
 
