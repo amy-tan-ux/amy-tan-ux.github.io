@@ -2,42 +2,87 @@
 <html lang="en">
 
 <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/13.3.21/Tone.js'> </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Practice Problems</title>
-    <link rel = "stylesheet" href="style.css">
+    <title>Personal Website</title>
+    <link rel = "stylesheet" href="index.css">
 </head>
+<header></header>
 
 <body>
-    
-    <header>
-        <scoreboard id = "scoreboard">0000000</scoreboard><br>
-        <name>Math Practice</name><br>
-        <level> Level <span id= "level">1</span>
-            <div id= "topic" >Addition</div>
-            <span id = "math-score">0</span> / <span id = "total-scoring">5</span>
-        </level>
-    </header>
 
-    <div class="math-problem">
+    <About> <Name class ="title"> Amy Tan </Name> <br>
 
-        <div id = "math-problem" class= "questions">Add:</div>
+    <description class = "project"> From Economics, Data to Computing ... I love to solve problems and code!</description><br>
+    <a href="Amy Tan Resume.pdf" download>
+        <button type="submit">Download CV</button>
+    </a>
 
-        <span id = "math-expression"> 1 + 1 = </span>  <span > <input type = "number" id= "answer" autocomplete="off" onfocus="this.value=''" onkeydown="keyDown()"> </span> 
-
-        <button type="button" id="submitButton"  onclick="submitAnswer()">submit</button><br>
-        <button type="button" onclick = "createQuestion(mathLevel)">skip</button>
-        <button type="button" id="skiplvl" onclick="skipLvl()">skip level</button>
-        <button type="button" id="restrt" onclick="restart()">restart</button>
-
-    </div>
+    </About> <br>
 
 
-    <script src = "index.js">
-    </script>
+
+    <MusicGenerator>
+        <Name class ="title"> DEMO & PROJECTS </Name><br>
+        <Project class = "project"> Random Music Generator </Project>
+        <img src = "piano.png" alt="piano" style="width:200px" /> 
+        
+        <button type="button" onclick ='go()'>Play Demo</button>
+        
+    </MusicGenerator> <br>
+
+
+    <Arcade>
+
+        <img src = "arcade.png" alt="arcade" style="width:100px"/> 
+        <Project class = "project"> Math Game </Project>
+        <a href='https://amy-tan-ux.github.io/MathGame/' target="_blank">
+            <button type="button">Play Demo</button>
+        </a>
+        
+    </Arcade> <br>
+
+
+    <script src="random.js"></script>
+    <script src = "knapsack.js"></script> 
+    <script src = "musicDB.js"></script>
+    <script src = "musictools.js"></script> 
+    <script src="beats.js"></script>
+    <script src = "musicobjects.js"></script>
+    <script src = "MusicGenerator.js"></script>  
+    <script src = "MusicPlayer.js"></script>   
+
     
 </body>
 
+<div>
 
+    <Bike>
+        <Project class = "project"> Bike Rider Analysis </Project>
+        <img src = "bike.png" alt="bike" style="width:200px" /> 
+        <a href='https://github.com/amy-tan-ux/Modeling-Rider-Count' target="_blank">
+            <button type="button">See Project</button>
+        </a>
+        
+    </Bike> <br>
+
+    <Billboard>
+        <img src = "billboard.png" alt="billboard" style="width:200px" loading = "lazy"> 
+        <Project class = "project"> Billboard Top Songs Database </Project>
+        <a href='https://github.com/amy-tan-ux/BillboardTop10' target="_blank">
+            <button type="button">See Project</button>
+        </a>
+        
+    </Billboard> <br>
+
+    <div>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+<footer></footer>
 </html>
