@@ -235,3 +235,10 @@ function skipLvl(){
     setLevel(mathLevel +1);
     createQuestion(mathLevel);
 }
+
+function restart(){
+
+    setLevel(1);
+    createQuestion(1);
+
+}

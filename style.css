@@ -8,16 +8,16 @@
 }
 
 body{
-     background: #8d6f58 ;
+     background: #abf5ff ;
 }
 
 header{
 
     margin:10% auto;
     padding: 0.2%;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 6px;
     width: 80%;
 }
@@ -40,14 +40,14 @@ header > scoreboard{
     top: -50px;
     right: -38%;
     font-size: 40px;
-    color:rgba(240, 248, 255, 0.541);
+    color:rgba(0, 0, 0, 0.541);
 }
 
 
 .math-problem {
     padding-left: 10%;
     padding-right: 10%;
-    color: white;
+    color: rgb(15, 6, 6);
     text-align: left;
     font-size:40px;
 }
@@ -60,6 +60,7 @@ input[type=number], select {
     font-size: 30px;
     margin: 4px;
     text-align: center;
+    width: 100px;
 
 }
 

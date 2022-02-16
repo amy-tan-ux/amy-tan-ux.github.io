@@ -24,11 +24,12 @@
 
         <div id = "math-problem" class= "questions">Add:</div>
 
-        <span id = "math-expression"> 1 + 1 = </span>  <span > <input type = "number" id= "answer" autocomplete="off" onfocus="this.value=''" onkeydown="keyDown()"> </span> <br>
+        <span id = "math-expression"> 1 + 1 = </span>  <span > <input type = "number" id= "answer" autocomplete="off" onfocus="this.value=''" onkeydown="keyDown()"> </span> 
 
-        <button type="button" id="submitButton"  onclick="submitAnswer()">submit</button>
-        <button type="button" onclick = "createQuestion(mathLevel)">skip</button> <br>
-        <button2 type="button" id="skiplvl" onclick="skipLvl()">skip level</button2>
+        <button type="button" id="submitButton"  onclick="submitAnswer()">submit</button><br>
+        <button type="button" onclick = "createQuestion(mathLevel)">skip</button>
+        <button type="button" id="skiplvl" onclick="skipLvl()">skip level</button>
+        <button type="button" id="restrt" onclick="restart()">restart</button>
 
     </div>
 
