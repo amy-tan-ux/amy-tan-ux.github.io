@@ -7,8 +7,8 @@
 
 body{
     padding-top: 80px;;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
     background-color: #57b9ed;
     
 }
@@ -22,14 +22,14 @@ a:link {
 .topic{
 
     font-family: 'Pontano Sans', sans-serif;
-    font-size: 45px;
+    font-size: 28px;
     text-align: center;
 
 }
 
 .description{
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
 
 }
@@ -70,8 +70,8 @@ a:link {
 
 .white-title{
 
-    font-size: 6vw;
-    color: #255c7a;
+    font-size: max(20px, 2vw);
+    color: #daf2ff;
     font-family: 'Sofia', cursive;
 }
 .blue-title{
@@ -92,8 +92,9 @@ a:link {
 
 }
 
-#main{
+.main{
     background-color:white;
+    padding-bottom: 5%;
     margin-bottom: 150px;
 
 }
@@ -131,7 +132,8 @@ a:link {
 
 #picture{
 
-    margin-top: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 
 }
@@ -142,7 +144,32 @@ a:link {
     font-family: 'Sofia', cursive;
 
 }
+@media only screen and (max-width:1605px){
+    .headshot{
+        margin-top: 50px;
+        height:100px;
+        width:auto;
+    }
+    
+    #picture{
 
+        height: 320px;
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #aboutMeBlurb{
+
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
 
 /* Mobile */
 
@@ -166,16 +193,11 @@ a:link {
         margin-bottom: 60px;
 
     }
-    .headshot{
-        margin-top: 50px;
-        height:100px;
-        width:auto;
-    }
 
     .topic{
 
         font-family: 'Pontano Sans', sans-serif;
-        font-size: 30px;
+        font-size: 28px;
         text-align: left;
     
     }
@@ -192,7 +214,7 @@ a:link {
     }
     .description{
 
-        font-size: 25px;
+        font-size: 20px;
     }
 
     #languageicon{
@@ -208,15 +230,6 @@ a:link {
     
         margin-bottom: 60px;
     
-    }
-
-    #picture{
-
-        height: 320px;
-        width:auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     #icon{
